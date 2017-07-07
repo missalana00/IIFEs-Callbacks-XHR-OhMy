@@ -1,0 +1,25 @@
+
+{
+  "herbivores": [
+    {
+      "name": "Sloth",
+      "origin": "South America"
+    },
+    {
+      "name": "Unicorn",
+      "origin": "Mystica"
+    },
+
+    {
+      "name": "Left",
+      "origin": "Alaska"
+    },
+
+    {
+      "name": "Red Panda",
+      "origin": "Asia"
+
+    }
+
+  ]
+}

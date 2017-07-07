@@ -1,0 +1,25 @@
+
+{
+  "carnivores": [
+    {
+      "name": "Lions",
+      "origin": "Africa"
+    },
+    {
+      "name": "T-rex",
+      "origin": "Jurassic Park"
+    },
+
+    {
+      "name": "Wolf",
+      "origin": "North America"
+    },
+
+    {
+      "name": "Panther",
+      "origin": "South America"
+
+    }
+
+  ]
+}
