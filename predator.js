@@ -1,6 +1,6 @@
 //This is the actual iife (an iife is an immediately invoked function)
 
-// The iife is the house - anything inside of it is (private; local scope
+// The iife is the house - anything inside of it is (private; local scope)
 
 
 var Predator = (function () {
@@ -8,12 +8,12 @@ var Predator = (function () {
 
   return {
     loadCarnivores: function (callbackFnctnToInvoke) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', 'carnivores.json');
-      xhr.send();
+      	var xhr = new XMLHttpRequest();
+      	xhr.open('GET', 'carnivores.json');
+      	xhr.send();
       
 
-      xhr.addEventListener("load", function () {
+      	xhr.addEventListener("load", function () {
         // Set the value of the private array
         carnivores = JSON.parse(this.responseText);
 
@@ -22,25 +22,22 @@ var Predator = (function () {
         // carnivore array as an argument.
       	callbackFnctnToInvoke(carnivores);
       }); 
-    },
-
-
-    // loadCarnivores: function (callbackFnctnToInvoke) {
-    //   var xhr = new XMLHttpRequest();
-    //   xhr.open('GET', 'carnivores.json');
-    //   xhr.send();
+    }, loadHerbivores: function (callbackFnctnToInvoke) {
+       		var xhr = new XMLHttpRequest();
+      		xhr.open('GET', 'herbivores.json');
+       		xhr.send();
       
 
-    //   xhr.addEventListener("load", function () {
-    //     // Set the value of the private array
-    //     carnivores = JSON.parse(this.responseText);
+      		xhr.addEventListener("load", function () {
+         	// Set the value of the private array
+         	herbivores = JSON.parse(this.responseText);
 
-    //     // Invoke the callback function so that the caller knows
-    //     // that the process is complete. Make sure to pass the 
-    //     // carnivore array as an argument.
-    //   	callbackFnctnToInvoke(carnivores);
-    //   }); 
-    // }
+         	// Invoke the callback function so that the caller knows
+         	// that the process is complete. Make sure to pass the 
+         	// carnivore array as an argument.
+       		callbackFnctnToInvoke(herbivores);
+       }); 
+     }
   };
 })();
 
@@ -50,11 +47,14 @@ function popDomWCarnivoreData (carnivoresData) {
 	
 }
 
-// function showHerbivores () {
+function popDomWHerbivoreData (herbivoreData) {
+	console.log(herbivoreData);
 
-// }
+}
 
 Predator.loadCarnivores(popDomWCarnivoreData);
+
+Predator.loadHerbivores(popDomWHerbivoreData);
 
 // This is where you populate the Dom; like the view
 
@@ -63,4 +63,4 @@ Predator.loadCarnivores(popDomWCarnivoreData);
 
 // callbackFunctionToinvoke is what you're expecting to receive
 
-// Line 23 is a reference to Line 48 becasue line 57 invokes line 10 and passes line 48 in
+// Line 23 is a reference to Line 45 becasue line 55 invokes line 10 and passes line 45 in
